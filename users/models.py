@@ -39,7 +39,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     image = models.ImageField(upload_to='media/users',
                               default='default/no_image.jpg')
     birthday = BirthdayField(blank=True, null=True)
-    biography = models.TextField(blank=True, null=True)
+    biography = models.TextField(blank=True, default='')
     is_staff = models.BooleanField(
         _('staff status'),
         default=False,

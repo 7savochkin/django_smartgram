@@ -14,7 +14,7 @@
         </center>
         <form method="post" class="mt-2">
             {% csrf_token %}
-            {% include 'parts/simple_form.html' with form=form %}
+            {% include 'part/simple_form.html' with form=form %}
             <button class="btn btn-outline-primary font-weight-bold mt-3" type="submit">Sign In</button>
         </form>
     </div>

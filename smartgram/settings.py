@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     # own apps
     'users',
     'home',
+    'posts',
 ]
 
 MIDDLEWARE = [

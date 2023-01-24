@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from users.urls import urlpatterns as users_urls
+from home.urls import urlpatterns as home_urls
 
 from smartgram import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(users_urls)),
+    path('', include(home_urls)),
 ]
 
 

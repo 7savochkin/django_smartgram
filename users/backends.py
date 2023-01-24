@@ -41,4 +41,4 @@ class PhoneAuthBackend(DjangoModelBackend):
 
     def user_can_authenticate(self, user):
         can = super().user_can_authenticate(user)
-        return can and user.is_phone_valid
+        return can and user.phone_is_valid

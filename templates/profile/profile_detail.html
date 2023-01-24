@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="profile-container">
+
+            <div class="profile">
+
+                <div class="profile-image">
+
+                    <img src="{{ user.image.url }}" alt="{{ user.username }}">
+
+                </div>
+
+                <div class="profile-user-settings">
+
+                    <h1 class="profile-user-name">{{ user.username }}</h1>
+                    {% if request.user.id == user.id %}
+
+
+                        <button class="btn profile-edit-btn">Edit Profile</button>
+
+                        <button class="btn profile-settings-btn"
+                            aria-label="profile settings"><i class="fas fa-cog"
+                                                             aria-hidden="true"></i>
+                        </button>
+
+                    {% endif %}
+                </div>
+
+                <div class="profile-stats">
+
+                    <ul>
+                        <li><span class="profile-stat-count">{{ user.post_author.count }}</span> posts
+                        </li>
+                        <li><span class="profile-stat-count">188</span>
+                            followers
+                        </li>
+                        <li><span class="profile-stat-count">206</span>
+                            following
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="profile-bio">
+
+                    <p><span
+                            class="profile-real-name">{{ user.get_full_name }}</span><br> {{ user.biography }}
+                        📷✈️🏕️</p>
+
+                </div>
+
+            </div>
+            <!-- End of profile section -->
+
+        </div>
+        <!-- End of container -->
+
+        <hr>
+
+        <div class="container">
+
+            <div class="gallery">
+
+
+                {% for post in user.post_author.iterator %}
+                    <div class="gallery-item" tabindex="0">
+
+                        <img src="{{ post.image.url }}" class="gallery-image"
+                             alt="" style="width:400px; height: 400px;">
+
+                    </div>
+                {% endfor %}
+
+
+
+                </div>
+
+            </div>
+            <!-- End of gallery -->
+
+        </div>
+        <!-- End of container -->
+{% endblock %}

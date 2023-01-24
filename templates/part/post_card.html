@@ -1,0 +1,25 @@
+<div class="col-sm-12 col-md-8 md-5 mt-5 p-0 post-container">
+    <a href="{% url 'profile' post.author.username %}" style='color: inherit;text-decoration: inherit;'>
+        <div class="media pt-3 pl-3 pb-1">
+                            <a href="{% url 'profile' post.author.username %}" class="text-decoration-none pl-2">
+                    <img src="{{ post.author.image.url }}" alt="{{ post.author.username }}"
+                         class="img-circle"
+                         style="width:35px; height: 35px; border-radius: 50%;">
+                </a>
+            <a href="{% url 'profile' post.author.username %}" style='color: inherit;text-decoration: inherit;'>
+                <b style="margin-top: 5px;"> {{ post.author.username  }}</b>
+            </a> <small style="color: #747474"> • {{ post.created_at.date }}</small>
+        </div>
+    </a>
+    <a href="{% url 'profile' post.author.username %}">
+        <img style="width: 100%;" src="{{ post.image.url }}" alt="{{ post.description }}">
+    </a>
+    <p class="mt-1 ml-2" >
+        <a href="" style="color: #000; font-size: 20px;">
+            <i class="far fa-heart"></i>
+        </a> <b>{{ post.likes_count }}</b>
+    </p>
+    <p class="ml-2 mt-0 mb-2">
+      <b style="margin-top: 5px;"> {{ post.author.username  }}</b> {{ post.description }}
+    </p>
+</div>

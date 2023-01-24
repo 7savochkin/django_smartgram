@@ -6,7 +6,7 @@ User = get_user_model()
 
 
 @admin.register(User)
-class ProductAdmin(admin.ModelAdmin):
+class UserAdmin(admin.ModelAdmin):
     list_display = ("user_avatar", "username", "email", "phone")
     list_filter = ("date_joined",)
     readonly_fields = ("password",)

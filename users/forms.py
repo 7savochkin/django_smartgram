@@ -26,7 +26,7 @@ class CustomUserCreationForm(UserCreationForm):
 
 class CustomAuthenticationForm(forms.Form):
     email = forms.EmailField(
-        widget=forms.EmailInput())
+        widget=forms.EmailInput(), required=False)
     phone = forms.CharField(max_length=30, required=False)
 
     password = forms.CharField(
